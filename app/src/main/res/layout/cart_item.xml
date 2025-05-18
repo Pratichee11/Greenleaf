@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardPreventCornerOverlap="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:layout_marginTop="50dp">
+
+        <!-- Product Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Plant Image -->
+            <ImageView
+                android:id="@+id/cart_item_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/green_primary_light"
+                android:contentDescription="Plant image"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/snake_plant" />
+
+            <!-- Text Content -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <!-- Plant Name -->
+            <TextView
+                android:id="@+id/cart_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green_primary_dark"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Snake Plant" />
+
+            <!-- Plant Price -->
+            <TextView
+                android:id="@+id/cart_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/green_primary_light"
+                android:textSize="14sp"
+                tools:text="$24.99" />
+
+            <!-- Quantity Controls -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <!-- Decrease Button -->
+                <Button
+                    android:id="@+id/decrease_quantity"
+                    style="@style/QuantityButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_negative_button"
+                    android:padding="0dp"
+                    android:text="-"
+                    android:textColor="@color/white" />
+
+                <!-- Quantity Display -->
+                <TextView
+                    android:id="@+id/cart_item_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:gravity="center"
+                    android:minWidth="24dp"
+                    android:textColor="@color/green_primary_dark"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="2" />
+
+                <!-- Increase Button -->
+                <Button
+                    android:id="@+id/increase_quantity"
+                    style="@style/QuantityButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_add_button"
+                    android:padding="0dp"
+                    android:text="+"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <!-- Item Total -->
+            <TextView
+                android:id="@+id/cart_item_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/green_primary_dark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Total: $49.98" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Remove Button -->
+        <Button
+            android:id="@+id/remove_item"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/error_red"
+            android:text="Remove"
+            android:textColor="@color/white" />
+</LinearLayout>
+
+    </androidx.cardview.widget.CardView>
