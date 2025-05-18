@@ -1,59 +1,41 @@
 package com.example.greenleaf;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class Product implements Parcelable {
+import java.io.Serializable;
+public class Product implements Serializable {
+    private int id;
     private String name;
     private String description;
     private double price;
-    private int imageResource;
+    private String imageUrl;  // for remote URL, can be null if using drawable
+    private int imageResId;   // for local drawable resource, 0 if none
 
-    // Constructor
-    public Product(String name, String description, double price, int imageResource) {
+    // Constructor for remote image URL
+    public Product(int id, String name, String description, double price, String imageUrl) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.imageResource = imageResource;
+        this.imageUrl = imageUrl;
+        this.imageResId = 0;
     }
 
-    // Getter methods
+    // Constructor for local drawable resource
+    public Product(int id, String name, String description, double price, int imageResId) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageResId = imageResId;
+        this.imageUrl = null;
+    }
+    public String getDescription() {
+        return description;
+    }
+    // getters
+    public String getImageUrl() { return imageUrl; }
+    public int getImageResId() { return imageResId; }
     public String getName() { return name; }
-    public String getDescription() { return description; }
-    public double getPrice() { return price; }
-    public int getImageResource() { return imageResource; }
-
-    // Parcelable implementation
-    protected Product(Parcel in) {
-        name = in.readString();
-        description = in.readString();
-        price = in.readDouble();
-        imageResource = in.readInt();
+    // ... other getters and setters
+    public double getPrice() {
+        return price;
     }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeString(description);
-        dest.writeDouble(price);
-        dest.writeInt(imageResource);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<Product> CREATOR = new Creator<Product>() {
-        @Override
-        public Product createFromParcel(Parcel in) {
-            return new Product(in);
-        }
-
-        @Override
-        public Product[] newArray(int size) {
-            return new Product[size];
-        }
-    };
 }
-
