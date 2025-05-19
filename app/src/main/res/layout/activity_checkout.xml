@@ -19,10 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#2E7D32"
-            android:elevation="4dp">
-
-
-        </androidx.appcompat.widget.Toolbar>
+            android:elevation="4dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,14 +30,13 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/order_summary"
+        <!-- Container for order summary -->
+        <LinearLayout
+            android:id="@+id/order_summary_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="3 items in your order"
-            android:textColor="#000000"
-            android:textSize="16sp" />
+            android:orientation="vertical" />
 
         <TextView
             android:layout_width="match_parent"
@@ -74,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="$89.97"
+            android:text="$0.00"
             android:textColor="#000000"
             android:textSize="16sp" />
 
