@@ -42,6 +42,9 @@ public class PlantDetailActivity extends AppCompatActivity {
         TextView plantDescription = findViewById(R.id.plant_detail_description);
         Button addToCartButton = findViewById(R.id.add_to_cart_button);
         ImageView favoriteButton = findViewById(R.id.favorite_button);
+        ImageView closeButton = findViewById(R.id.close_button);
+        closeButton.setOnClickListener(v -> finish());
+
 
         // Set plant data
         int imageResId = getResources().getIdentifier(
