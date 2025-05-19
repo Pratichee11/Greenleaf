@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Favorite Button (top-right) -->
+        <ImageView
+            android:id="@+id/favorite_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_favorite_border"
+            android:tint="#2E7D32"
+            android:contentDescription="Favorite"/>
+
+        <!-- Plant Image -->
+        <ImageView
+            android:id="@+id/plant_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:background="@color/green_leaf_light"
+            android:contentDescription="Plant image"
+            tools:src="@drawable/snake_plant"/>
+
+        <!-- Plant Name -->
+        <TextView
+            android:id="@+id/plant_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#2E7D32"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Snake Plant"/>
+
+        <!-- Plant Price -->
+        <TextView
+            android:id="@+id/plant_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#4CAF50"
+            android:textSize="14sp"
+            tools:text="$24.99"/>
+
+        <!-- Add to Cart Button -->
+        <Button
+            android:id="@+id/add_to_cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#2E7D32"
+            android:text="Add to Cart"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

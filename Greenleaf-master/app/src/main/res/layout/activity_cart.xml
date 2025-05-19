@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_primary_light"
+    tools:context=".CartActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/green_primary_light"
+        android:elevation="4dp"
+        android:layout_marginTop="50dp">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cart_bottom_bar"
+        android:layout_below="@id/toolbar"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+    <!-- Bottom Bar -->
+    <LinearLayout
+        android:id="@+id/cart_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/cart_total_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="@color/green_primary_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Total: $89.97" />
+
+        <Button
+            android:id="@+id/checkout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/green_leaf_primary"
+            android:text="Proceed to Checkout"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>
